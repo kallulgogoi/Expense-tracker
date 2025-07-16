@@ -210,7 +210,7 @@ function Login() {
 
             <div className="max-lg:mt-8">
               <img
-                src="https://res.cloudinary.com/dgechlqls/image/upload/v1716200000/expense-tracker-login.jpg"
+                src="https://www.cflowapps.com/wp-content/uploads/2020/10/expense-reimbursements.png"
                 className="w-full rounded-xl shadow-lg max-lg:w-4/5 mx-auto block object-cover"
                 alt="Expense tracking illustration"
               />
