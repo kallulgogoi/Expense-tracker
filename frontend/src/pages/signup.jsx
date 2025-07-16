@@ -240,7 +240,7 @@ function Signup() {
 
             <div className="max-lg:mt-8">
               <img
-                src="https://res.cloudinary.com/dgechlqls/image/upload/v1716200000/expense-tracker-signup.jpg"
+                src="https://www.lystloc.com/blog/wp-content/uploads/2023/02/How-To-Manage-Field-Employee-Expenses-1.webp"
                 className="w-full rounded-xl shadow-lg max-lg:w-4/5 mx-auto block object-cover"
                 alt="Expense tracking illustration"
               />
