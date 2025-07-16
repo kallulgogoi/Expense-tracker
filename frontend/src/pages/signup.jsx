@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
-
 import { ToastContainer } from "react-toastify";
 import { useState } from "react";
 import { handleError, handleSuccess } from "../utils";
 const BASE_URL = import.meta.env.VITE_BACKEND_BASE_URL;
+
 function Signup() {
   const [signUpInfo, setSignUpInfo] = useState({
     name: "",
@@ -62,106 +62,176 @@ function Signup() {
 
   return (
     <>
-      <div className="min-h-screen flex items-center justify-center p-4 ">
+      <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center p-4">
         <div className="w-full max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div className="bg-white border transition-all duration-500 ease-out border-gray-300 rounded-lg p-6 shadow-md max-w-md mx-auto animate-[slideIn_0.5s_forwards]">
-              <form className="space-y-6" onSubmit={handleSubmit}>
-                <div className="mb-8">
-                  <h1 className="text-3xl font-semibold text-gray-900">
-                    Create Account
+            <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-lg max-w-md mx-auto animate-[slideIn_0.5s_forwards]">
+              <div className="flex items-center mb-6">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8 text-green-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <h1 className="text-2xl font-bold text-gray-800 ml-2">
+                  ExpenseTracker
+                </h1>
+              </div>
+
+              <form className="space-y-5" onSubmit={handleSubmit}>
+                <div className="mb-6">
+                  <h1 className="text-2xl font-bold text-gray-800">
+                    Create Your Account
                   </h1>
-                  <p className="text-gray-600 mt-4 text-[15px] leading-relaxed">
-                    Join our community and unlock exclusive features.
+                  <p className="text-gray-600 mt-2 text-sm">
+                    Start tracking your expenses today
                   </p>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-900 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Full Name
                   </label>
                   <div className="relative">
                     <input
                       name="name"
                       type="text"
-                      className="w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-3 pl-4 pr-10 outline-blue-600"
+                      className="w-full text-sm text-gray-700 border border-gray-300 rounded-lg p-3 pl-4 pr-10 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition"
                       placeholder="Enter your full name"
                       value={signUpInfo.name}
                       onChange={handleSignUp}
                     />
                     <svg
-                      className="w-[18px] h-[18px] absolute right-4 top-1/2 transform -translate-y-1/2"
-                      fill="#bbb"
+                      className="w-5 h-5 absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
                       viewBox="0 0 24 24"
                     >
-                      <path d="M19 7.001c0 3.865-3.134 7-7 7s-7-3.135-7-7c0-3.867 3.134-7.001 7-7.001s7 3.134 7 7.001zm-1.598 7.18c-1.506 1.137-3.374 1.82-5.402 1.82-2.03 0-3.899-.685-5.407-1.822-4.072 1.793-6.593 7.376-6.593 9.821h24c0-2.423-2.6-8.006-6.598-9.819z" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      />
                     </svg>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-900 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Email
                   </label>
                   <div className="relative">
                     <input
                       name="email"
                       type="email"
-                      className="w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-3 pl-4 pr-10 outline-blue-600"
+                      className="w-full text-sm text-gray-700 border border-gray-300 rounded-lg p-3 pl-4 pr-10 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition"
                       placeholder="Enter your email"
                       value={signUpInfo.email}
                       onChange={handleSignUp}
                     />
                     <svg
-                      className="w-[18px] h-[18px] absolute right-4 top-1/2 transform -translate-y-1/2"
-                      fill="#bbb"
+                      className="w-5 h-5 absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
                       viewBox="0 0 24 24"
                     >
-                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
                     </svg>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-900 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Password
                   </label>
                   <div className="relative">
                     <input
                       name="password"
                       type="password"
-                      className="w-full text-sm text-gray-900 border border-gray-300 rounded-lg p-3 pl-4 pr-10 outline-blue-600"
+                      className="w-full text-sm text-gray-700 border border-gray-300 rounded-lg p-3 pl-4 pr-10 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition"
                       placeholder="Create password"
                       value={signUpInfo.password}
                       onChange={handleSignUp}
                     />
                     <svg
-                      className="w-[18px] h-[18px] absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
-                      fill="#bbb"
-                      viewBox="0 0 128 128"
+                      className="w-5 h-5 absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      <path d="M64 104C22.127 104 1.367 67.496.504 65.943a4 4 0 0 1 0-3.887C1.367 60.504 22.127 24 64 24s62.633 36.504 63.496 38.057a4 4 0 0 1 0 3.887C126.633 67.496 105.873 104 64 104zM8.707 63.994C13.465 71.205 32.146 96 64 96c31.955 0 50.553-24.775 55.293-31.994C114.535 56.795 95.854 32 64 32 32.045 32 13.447 56.775 8.707 63.994zM64 88c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm0-40c-8.822 0-16 7.178-16 16s7.178 16 16 16 16-7.178 16-16-7.178-16-16-16z" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                      />
                     </svg>
                   </div>
                 </div>
 
-                <div className="!mt-8">
+                <div className="pt-2">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full py-2.5 px-4 text-[15px] font-medium tracking-wide rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none ${
-                      isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+                    className={`w-full py-3 px-4 text-sm font-medium rounded-lg text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition ${
+                      isSubmitting ? "opacity-70 cursor-not-allowed" : ""
                     }`}
                   >
-                    {isSubmitting ? "Signing Up..." : "Sign Up"}
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center">
+                        <svg
+                          className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
+                        </svg>
+                        Creating Account...
+                      </span>
+                    ) : (
+                      "Create Account"
+                    )}
                   </button>
-                  <p className="text-sm !mt-6 text-center text-gray-600">
+                  <p className="text-sm mt-4 text-center text-gray-600">
                     Already have an account?{" "}
                     <Link
                       to="/login"
-                      className="text-blue-600 font-medium hover:underline ml-1 whitespace-nowrap"
+                      className="text-green-600 font-medium hover:underline hover:text-green-700 ml-1 whitespace-nowrap transition"
                     >
-                      Login here
+                      Sign in here
                     </Link>
                   </p>
                 </div>
@@ -170,10 +240,14 @@ function Signup() {
 
             <div className="max-lg:mt-8">
               <img
-                src="https://res.cloudinary.com/dgechlqls/image/upload/v1752122841/ljw2h2j8pqcthyhk414w.jpg"
-                className="w-full aspect-[71/50] max-lg:w-4/5 mx-auto block object-cover rounded-lg"
-                alt="Signup illustration"
+                src="https://res.cloudinary.com/dgechlqls/image/upload/v1716200000/expense-tracker-signup.jpg"
+                className="w-full rounded-xl shadow-lg max-lg:w-4/5 mx-auto block object-cover"
+                alt="Expense tracking illustration"
               />
+              <div className="mt-4 text-center text-gray-600 text-sm">
+                <p>Track every penny, save every dollar.</p>
+                <p className="mt-1">Take control of your finances today.</p>
+              </div>
             </div>
           </div>
         </div>
