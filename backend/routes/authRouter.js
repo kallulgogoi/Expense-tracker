@@ -14,7 +14,11 @@ const { isLoggedIn } = require("../middlewears/isLoggedIn");
 router.post("/login", signInValidation, login);
 router.post("/signup", signUpValidation, signUp);
 router.post("/logout", isLoggedIn, (req, res) => {
-  res.clearCookie("token");
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "None",
+  });
   res.status(200).json({ success: true, message: "Logged out successfully" });
 });
 
